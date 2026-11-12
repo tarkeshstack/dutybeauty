@@ -1639,8 +1639,7 @@ const GROW_INDEX=[
 ["grow:skills","Build skills on three tracks","craft domain people learning 70 20 10 courses"],
 ["grow:oneone","Make your 1:1 count","manager questions agenda feedback"],
 ["grow:wins","Win log","achievements brag document appraisal notes"],
-["grow:ctc","Understand your CTC","salary take-home in-hand pf gratuity variable basic hra estimate"],
-["grow:switch","Thinking of switching jobs?","job change notice period reference resign"]
+["grow:ctc","Understand your CTC","salary take-home in-hand pf gratuity variable basic hra estimate"]
 ];
 const JUMPS=[
 ["Day one is coming up","proc:onboarding"],
@@ -1712,7 +1711,7 @@ const TOPICS=[
  {id:'talk',n:'Meetings & email',b:'Jargon, writing and speaking up',c:3,cat:'Meetings & email',guides:[],tools:['email','chat','meet'],msgs:['mom','pushback','feedback'],habits:[0]},
  {id:'money',n:'Pay & money',b:'CTC, PF, expenses and timesheets',c:4,cat:'Money',guides:['expense','timesheet'],tools:['timesheet'],tips:['ctc']},
  {id:'tech',n:'Tech & projects',b:'Agile, tickets, code and access',c:5,cat:'Tech & projects',guides:['sprint'],tools:['git','pipeline','security','helpdesk']},
- {id:'grow',n:'Grow & get noticed',b:'Reviews, skills, levels and wins',c:6,cat:null,guides:['review'],tools:[],tips:['ladder','drivers','slowers','appraisal','skills','oneone','wins','switch'],habits:[2]}
+ {id:'grow',n:'Grow & get noticed',b:'Reviews, skills, levels and wins',c:6,cat:null,guides:['review'],tools:[],tips:['ladder','drivers','slowers','appraisal','skills','oneone','wins'],habits:[2]}
 ];
 const TOPIC=Object.fromEntries(TOPICS.map(t=>[t.id,t]));
 const TIPS={
@@ -1723,7 +1722,6 @@ const TIPS={
  skills:['Build skills on three tracks','Craft, domain and people skills','learning courses craft domain people 70 20 10'],
  oneone:['Make your 1:1 count','Questions and an agenda that get you real feedback','manager one on one agenda feedback questions'],
  wins:['Win log','One line each time something goes well','achievements brag document appraisal notes'],
- switch:['Thinking of switching jobs?','Four checks before you resign','job change notice period reference resign offer'],
  ctc:['Understand your CTC','Estimate your monthly in-hand pay (India)','salary take-home in-hand pf gratuity variable basic hra estimate']
 };
 /* ---------- unified item list ---------- */
@@ -1891,7 +1889,6 @@ const TIPR={
  appraisal:()=>`<p class="lead">A <b>rating</b> scores your year. An <b>increment</b> is a pay rise. A <b>promotion</b> is a new level. They are linked, but one does not guarantee the others.</p><div class="card"><b>Calibration.</b> Leaders compare ratings across teams so the scale is fair. That is why your manager may not promise a rating, and why written evidence matters.</div><div class="card"><span class="eyebrow">Write it as</span><p style="margin-top:4px">Problem, what I did, what changed (a number), who benefited.</p></div><div class="pair"><div class="no"><b>Instead of</b>“Worked on many tasks and helped the team.”</div><div class="yes"><b>Try</b>“Cut the nightly job from 4 hours to 50 minutes by fixing two slow queries. Support now has reports by 8 am.”</div></div>`,
  skills:()=>`<div class="dr"><div><i class="bx">C</i><span><b>Craft</b>SQL, Git, testing, cloud basics, your main tool or language.</span></div><div><i class="bx">D</i><span><b>Domain</b>How the client’s business works: banking, retail, healthcare, telecom.</span></div><div><i class="bx">P</i><span><b>People</b>Clear writing, presenting, estimating, running a meeting, handling conflict.</span></div></div><p class="note">Rule of thumb: about 70% of learning comes from real work, 20% from people and 10% from courses.</p>`,
  oneone:()=>`<p class="lead">Bring an agenda: wins, blockers, feedback, growth and one ask.</p><ul class="dl"><li>What should I do more of, and less of?</li><li>What does a strong quarter look like at my level?</li><li>Which of my work was most useful to the team?</li><li>What skill would unlock bigger projects for me?</li><li>Who else should I be talking to?</li></ul>`,
- switch:()=>`<ul class="dl"><li>Stay long enough to have something to show: a delivered project, a skill, a manager who will vouch for you.</li><li>Move for learning and scope first, pay second.</li><li>Check notice period, bonus clawbacks and background-check rules before you resign.</li><li>Leave with the handover done. Reference calls are real.</li></ul>`,
  wins:()=>`<p class="lead">Add one line whenever something goes well, with a number if you can. You will be glad at appraisal time.</p><div class="field"><label for="winIn">What went well?</label><input id="winIn" placeholder="Cut report time from 3 hours to 20 minutes" autocomplete="off"></div><div class="acts"><button class="btn sm" id="winAdd">Add</button><button class="btn sm ghost" id="winCopy">Copy all</button></div><ul class="wins" id="winList"></ul><p class="note">Stored in this browser only. Copy it somewhere safe now and then.</p>`,
  ctc:()=>`<div class="ctcbox"><p class="note">CTC is what the company spends on you, not what lands in your account. Your offer letter’s salary annexure has the real split.</p><div class="in"><div class="field"><label for="ctc">Annual CTC (₹)</label><input id="ctc" type="number" inputmode="numeric" value="600000" min="0"></div><div class="field"><label for="ins">Insurance and benefits (₹ a year)</label><input id="ins" type="number" inputmode="numeric" value="15000" min="0"></div></div><div class="range"><label for="varPct">Variable pay: <b id="varPctV"></b> of CTC</label><input id="varPct" type="range" min="0" max="40" value="10"></div><div class="range"><label for="basicPct">Basic: <b id="basicPctV"></b> of fixed pay</label><input id="basicPct" type="range" min="30" max="60" value="40"></div><div class="card"><span class="eyebrow">Estimated monthly in-hand, before income tax</span><div class="big" id="ctcMonthly"></div><div class="bar" id="ctcBar" style="margin-block:10px"></div><ul class="leg" id="ctcLegend"></ul></div><p class="note" id="ctcNote"></p><p class="note">Assumes HRA is 50% of basic, PF is 12% of basic on both sides, gratuity is 4.81% of basic and professional tax is ₹200 a month. Income tax is not included.</p></div>`
 };
