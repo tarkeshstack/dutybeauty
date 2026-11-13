@@ -1541,7 +1541,63 @@ slip:"Writing the self-review the night before, from memory.",fix:"Keep a win lo
 "Submit the claim in the expense tool before the deadline.",
 "Manager and finance approve.",
 "The amount is paid with your salary or separately."],
-slip:"Losing the receipt, or claiming something personal.",fix:"Photograph receipts the same day. Claim only what the policy allows."}
+slip:"Losing the receipt, or claiming something personal.",fix:"Photograph receipts the same day. Claim only what the policy allows."},
+{id:"meeting",title:"Joining and running meetings",when:"Calls, stand-ups and reviews",steps:[
+"Read the invite: agenda, time zone, and whether you are expected to speak.",
+"Join two minutes early. Test audio and camera, and mute when you are not speaking.",
+"Keep notes: decisions, owners and dates.",
+"When you speak, give the answer first, then one line of detail.",
+"If you are asked something you do not know, say you will check and give a time.",
+"After the call, send the notes and action items the same day."],
+slip:"Joining late, unmuted, or leaving without knowing your action items.",fix:"Write your action items down before you drop off, and confirm them in a short follow-up message."},
+{id:"emailwrite",title:"Writing an email that gets read",when:"Any formal request or update",steps:[
+"Write a subject line that says what you need: \"Approval needed by Friday: laptop request\".",
+"Open with the ask or the update in one line.",
+"Add only the details the reader needs, in short paragraphs or bullets.",
+"Say clearly who must do what, and by when.",
+"Check the To, Cc and attachments before you send.",
+"Re-read once. Cut anything that does not help the reader act."],
+slip:"A long email with the request hidden at the end, or Reply All when it was not needed.",fix:"Put the ask in the first two lines. Reply All only if everyone needs the answer."},
+{id:"wfh",title:"Working from home or hybrid",when:"Remote days and office days",steps:[
+"Check the policy: which days are office days, and how to record WFH in the HR portal.",
+"Keep your working hours visible on your calendar and chat status.",
+"Join the VPN before you open internal tools.",
+"Post a short start-of-day and end-of-day update if your team does that.",
+"Respond to chat within a reasonable time. If you are away, set your status.",
+"Raise any connection or power problem early, with an ETA for when you will be back."],
+slip:"Going quiet for hours, or working from a public network without the VPN.",fix:"Keep your status updated and always use the VPN for company systems."},
+{id:"handover",title:"Handing over your work",when:"Leave, a role change or moving projects",steps:[
+"List what you own: tasks, tickets, scheduled jobs and recurring reports.",
+"Write simple steps for each one, with links and where to find access.",
+"Mark what is urgent and what can wait.",
+"Walk the person through it in a KT session. Record it if allowed.",
+"Share the notes in the team space, not only in a private chat.",
+"Stay reachable for questions for the first few days."],
+slip:"Handing over a half-finished task with only \"you will figure it out\".",fix:"Write the steps, the status and the next action for every item."},
+{id:"firstoneone",title:"Your first 1:1 with your manager",when:"In the first few weeks",steps:[
+"Send two or three topics before the meeting.",
+"Ask what good looks like in your first 90 days.",
+"Ask how your manager prefers updates: chat, email or a quick call.",
+"Share what is going well and where you are stuck.",
+"Ask for feedback on one specific thing you did.",
+"After the meeting, send a short note of what was agreed."],
+slip:"Treating a 1:1 as only a status report, or not preparing at all.",fix:"Bring questions, one win and one blocker every time."},
+{id:"firstpr",title:"Your first code change",when:"For developers and testers",steps:[
+"Pull the latest code and create a branch from the right base.",
+"Make a small, focused change. Run the tests locally.",
+"Write a clear commit message that says what and why.",
+"Raise a pull request with a short description and a link to the ticket.",
+"Respond to review comments politely. Fix them in the same branch.",
+"After the merge, check the pipeline and move the ticket."],
+slip:"A huge pull request with many unrelated changes.",fix:"Keep each pull request small and tied to one ticket."},
+{id:"payslip",title:"Reading your payslip",when:"Every month",steps:[
+"Open the payslip from the HR or payroll portal.",
+"Check earnings: basic, HRA, allowances and any variable pay or bonus.",
+"Check deductions: PF, professional tax and TDS.",
+"Compare the net pay with the amount credited to your bank.",
+"Keep a copy of each payslip. Download Form 16 when it is released.",
+"If anything looks wrong, raise it with HR or payroll with the month and amount."],
+slip:"Never opening the payslip until something goes wrong.",fix:"Check it every month for the first three months, then at least each quarter."}
 ];
 const TOOLS=[
 {id:"email",name:"Email and calendar",tags:["Outlook","Gmail"],does:"The official record of work: formal requests, approvals, invites, decisions.",setup:"Add a signature with name, role, team and phone. Set working hours and time zone. Create folders for your project.",manners:"Specific subject lines. Cc only people who need to act or know. Use Reply all sparingly. Check your calendar before accepting, and add an agenda to invites you send."},
@@ -1706,11 +1762,11 @@ function homeExtras(){
 const TYPES=[['all','All'],['word','Words'],['guide','Guides'],['tool','Tools'],['habit','Habits'],['message','Messages'],['tip','Tips']];
 const TYL={word:'Word',guide:'Guide',tool:'Tool',habit:'Habit',message:'Message',tip:'Tip'};
 const TOPICS=[
- {id:'join',n:'Joining & people',b:'HR words, onboarding, leave and exits',c:1,cat:'People & HR',guides:['onboarding','leave'],tools:['hrms','learning'],msgs:['leave'],plan:1},
- {id:'work',n:'Getting work done',b:'Tasks, tickets, blockers and delivery',c:2,cat:'Work',guides:['ticket','escalate'],tools:['tickets','wiki'],msgs:['help','blocker','status'],habits:[1]},
- {id:'talk',n:'Meetings & email',b:'Jargon, writing and speaking up',c:3,cat:'Meetings & email',guides:[],tools:['email','chat','meet'],msgs:['mom','pushback','feedback'],habits:[0]},
- {id:'money',n:'Pay & money',b:'CTC, PF, expenses and timesheets',c:4,cat:'Money',guides:['expense','timesheet'],tools:['timesheet'],tips:['ctc']},
- {id:'tech',n:'Tech & projects',b:'Agile, tickets, code and access',c:5,cat:'Tech & projects',guides:['sprint'],tools:['git','pipeline','security','helpdesk']},
+ {id:'join',n:'Joining & people',b:'HR words, onboarding, leave and exits',c:1,cat:'People & HR',guides:['onboarding','leave','wfh','firstoneone'],tools:['hrms','learning'],msgs:['leave'],plan:1},
+ {id:'work',n:'Getting work done',b:'Tasks, tickets, blockers and delivery',c:2,cat:'Work',guides:['ticket','escalate','handover'],tools:['tickets','wiki'],msgs:['help','blocker','status'],habits:[1]},
+ {id:'talk',n:'Meetings & email',b:'Jargon, writing and speaking up',c:3,cat:'Meetings & email',guides:['meeting','emailwrite'],tools:['email','chat','meet'],msgs:['mom','pushback','feedback'],habits:[0]},
+ {id:'money',n:'Pay & money',b:'CTC, PF, expenses and timesheets',c:4,cat:'Money',guides:['expense','timesheet','payslip'],tools:['timesheet'],tips:['ctc']},
+ {id:'tech',n:'Tech & projects',b:'Agile, tickets, code and access',c:5,cat:'Tech & projects',guides:['sprint','firstpr'],tools:['git','pipeline','security','helpdesk']},
  {id:'grow',n:'Grow & get noticed',b:'Reviews, skills, levels and wins',c:6,cat:null,guides:['review'],tools:[],tips:['ladder','drivers','slowers','appraisal','skills','oneone','wins'],habits:[2]}
 ];
 const TOPIC=Object.fromEntries(TOPICS.map(t=>[t.id,t]));
